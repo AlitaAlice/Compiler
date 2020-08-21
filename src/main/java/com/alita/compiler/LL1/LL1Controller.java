@@ -20,8 +20,8 @@ public class LL1Controller {
         lang.setLL1Array(array);
         lang.initNvNt();
         TreeSet nvSet = lang.getNvSet();
-        ArrayList<String> array1=lang.direct_left_recursion(array,nvSet);
-        lang.setLL1Array(array1);//文法表达式集合
+        //ArrayList<String> array1=lang.direct_left_recursion(array,nvSet);
+        lang.setLL1Array(array);//文法表达式集合
         lang.setS('E');//开始符
         lang.init();
     }
