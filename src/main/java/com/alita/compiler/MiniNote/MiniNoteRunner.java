@@ -1,4 +1,4 @@
-package com.alita.compiler.LR00;//记事本主体类
+package com.alita.compiler.MiniNote;//记事本主体类
 import java.awt.event.*;
 import java.awt.*;
 import java.io.*;

@@ -1,4 +1,4 @@
-package com.alita.compiler.LR00;//字体类
+package com.alita.compiler.MiniNote;//字体类
 
 import java.awt.Font;
         import java.awt.GraphicsEnvironment;

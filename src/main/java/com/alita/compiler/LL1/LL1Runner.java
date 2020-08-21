@@ -1,10 +1,4 @@
 package com.alita.compiler.LL1;
-
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
-
-import java.io.File;
-import java.io.FileReader;
 import java.util.Scanner;
 
 import static com.alita.compiler.LL1.Grammar.lastString;
