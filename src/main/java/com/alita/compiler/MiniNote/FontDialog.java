@@ -27,6 +27,7 @@ public class FontDialog {
     private JLabel lbl2 = new JLabel("字形：");
     private JLabel lbl3 = new JLabel("大小：");
     private JTextArea area;
+
     String[] zx = { "常规", "加粗", "斜体", "基线" };
     String[] dx = {"8" , "9" , "10", "12", "14", "15", "16", "18",
             "20", "21", "22", "24", "26", "28", "30", "36",
@@ -56,6 +57,10 @@ public class FontDialog {
         cancelButton.addActionListener(new fontListener());
         okButton.addActionListener(new fontListener());
         fontdialog.addWindowListener(new fontListener());
+        Dimension displaySize = Toolkit.getDefaultToolkit().getScreenSize(); // 获得显示器大小对象
+        Dimension frameSize =fontdialog.getSize();             // 获得窗口大小对象
+        fontdialog.setLocation((displaySize.width - frameSize.width) / 2,
+                (displaySize.height - frameSize.height) / 2);
 
         cb1.addItemListener(new ItemListener() {                       //字体动作
             public void itemStateChanged(ItemEvent event) {         //添加监听器获取选择用户的字体类型

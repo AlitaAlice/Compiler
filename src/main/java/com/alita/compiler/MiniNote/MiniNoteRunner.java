@@ -82,6 +82,12 @@ public class MiniNoteRunner extends JFrame implements ActionListener  {
         setBackground(Color.white);
         setSize(800,600);
         setJMenuBar(menuBar);
+        Dimension displaySize = Toolkit.getDefaultToolkit().getScreenSize(); // 获得显示器大小对象
+        Dimension frameSize = getSize();             // 获得窗口大小对象
+        setLocation((displaySize.width - frameSize.width) / 2,
+                (displaySize.height - frameSize.height) / 2);
+        setLocation((displaySize.width - frameSize.width) / 2,
+                (displaySize.height - frameSize.height) / 2);
         menuBar.add(file);
         menuBar.add(edit);
         menuBar.add(format);
