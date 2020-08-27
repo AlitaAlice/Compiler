@@ -2,22 +2,6 @@ package com.alita.compiler.Exp4;
 
 import java.util.*;
 
-class Element {
-    String times;
-    String data1;
-    String op;
-    String data2;
-    int result;
-    Element(String times,String data1,String op,String data2) {
-        this.times = times;
-        this.data1 = data1;
-        this.op = op;
-        this.data2 = data2;
-    }
-    public void setValue(int result) {
-        this.result=result;
-    }
-}
 public class Exp4Runner {
     static Map<String, Integer> map = new TreeMap<String, Integer>();
     static List<Character> list = new ArrayList<Character>();
@@ -33,13 +17,10 @@ public class Exp4Runner {
         System.out.println("please input with \"begin\" end with \"end #\"");
         Scanner cin = new Scanner(System.in);
         String code = cin.nextLine();
-
-        for(int i = 0;i < code.length();i++) {
+        for(int i = 0;i < code.length();i++)
             list.add(code.charAt(i));
-        }
         map.put("begin",1);
         map.put("end", 2);
-
         scanner();
         parser();
         if(flag){
@@ -47,7 +28,7 @@ public class Exp4Runner {
 
                 Element e = elements.get(i);
                 System.out.println(e.times + " = " + e.data1 + " " + e.op + " " + e.data2);
-                if(i==0){
+                if(i==0&&e.op!=""){
                     int result=calculate(Integer.parseInt(e.data1),e.op,Integer.parseInt(e.data2));
                     e.setValue(result);
                 }
@@ -55,6 +36,7 @@ public class Exp4Runner {
                     int result=0;
                     String tempData=elements.get(i-1).times;
                     if(e.data1==tempData){
+
                         result=calculate(elements.get(i-1).result,e.op,Integer.parseInt(e.data2));
                     }
                     else{
@@ -67,8 +49,14 @@ public class Exp4Runner {
 
 
             }
-            Element e = elements.get(elements.size()-2);
-            System.out.println(e.result);
+            if(elements.size()==1){
+                System.out.println(elements.get(0).data1);
+            }
+            else{
+                Element e=elements.get(elements.size()-2);
+                System.out.println(e.result);
+            }
+
         }
         cin.close();
     }
@@ -299,6 +287,9 @@ public class Exp4Runner {
             case "/":{
                 result=data1/data2;
                 break;
+            }
+            case "":{
+                result=data1;
             }
 
             }
