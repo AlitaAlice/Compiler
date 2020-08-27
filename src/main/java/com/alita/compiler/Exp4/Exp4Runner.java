@@ -34,8 +34,9 @@ public class Exp4Runner {
         Scanner cin = new Scanner(System.in);
         String code = cin.nextLine();
 
-        for(int i = 0;i < code.length();i++)
+        for(int i = 0;i < code.length();i++) {
             list.add(code.charAt(i));
+        }
         map.put("begin",1);
         map.put("end", 2);
 
